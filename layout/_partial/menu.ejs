@@ -18,10 +18,11 @@
     <a class="nav-item-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
   </li>
   <% } %>
-  <li class="nav-item <%= clsName %>">
-    <a class="nav-item-link" target="_blank" href="https://github.com/The-Brotherhood-of-SCU">
-      Github <i class="fas fa-external-link-alt" style="font-size: 15px;"></i>
-    </a>
-  </li>
-
+  <% for (var i in theme.menu_links){ %>
+    <li class="nav-item <%= clsName %>">
+      <a class="nav-item-link" target="_blank" href="<%- url_for(theme.menu_links[i]) %>">
+        <%=i %> <i class="fas fa-external-link-alt" style="font-size: 15px;"></i>
+      </a>
+    </li>
+  <% } %>
 </ul>
