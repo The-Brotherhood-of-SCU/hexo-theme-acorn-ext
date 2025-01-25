@@ -2,8 +2,8 @@
 menu:
   Home: /
   Internal-Projects: /internal
+  Tags: /tags
   About: /about
-
 menu_links:
   Github: https://github.com/The-Brotherhood-of-SCU
 

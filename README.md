@@ -29,3 +29,4 @@ enhancement:
 6. pricing partial移除价格&ddl ui
 7. 在配置中增加auto_fold选项，自动折叠内容
 8. 在portrait中优化呼出导航栏时的阴影变化
+9. 增加tags页面
