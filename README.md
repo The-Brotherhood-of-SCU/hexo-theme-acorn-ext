@@ -10,7 +10,7 @@ Acorn is a Hexo theme for small to medium sized businesses or studios.
 
 最近重构了博客主题，发现[acorn](https://acorn.imaging.xin/)主题是最合适的。为了定制我自己的需求，我将其fork、修改了。
 
-https://github.com/The-Brotherhood-of-SCU/hexo-theme-acorn-ext
+示例：https://the-brotherhood-of-scu.github.io/
 
 主要改动：
 
