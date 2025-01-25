@@ -1,10 +1,8 @@
 # Header
 menu:
-  首页: /
-  画廊: /gallery
-  案例: /stories
-  新闻: /archives
-  关于: /about
+  Home: /
+  Internal-Projects: /internal
+  About: /about
 
 # Content
 excerpt_link: 阅读全文
@@ -16,9 +14,9 @@ beian:
   url: https://beian.miit.gov.cn/
 
 # Miscellaneous
-favicon: /images/favicon.ico
-webclip: /images/webclip
-brand:   /images/brand.svg
+favicon: https://avatars.githubusercontent.com/u/154577967?s=48&v=4
+webclip: 
+brand:   /images/brand.png
 
 # Jumbotron video & Hero image & Swiper
 ## Jumbotron video
@@ -27,7 +25,7 @@ video:
   path: /images/movie/
 ## Hero image
 hero: 
-  image: /images/banner/banner.jpg
+  image: /images/banner/banner.avif
 ## Swiper
 ## https://github.com/nolimits4web/swiper
 swiper: 
@@ -39,11 +37,11 @@ toc: true
 
 # Slogan
 slogan: 
-  primary: 焕然一新
-  secondary: Acorn 是一颗适用于中小企业的 Hexo 主题
-  archives: 汇聚热点话题 打造创新思路
-  pages: 运维更智能 部署更方便 应用更便捷
-  posts: 实践见真知既是最好的解释
+  primary: The Brotherhood of SCU
+  secondary: Find Anything Here
+  archives: 
+  pages: 
+  posts: 
 
 # Library
 libs:

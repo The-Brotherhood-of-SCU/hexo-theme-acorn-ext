@@ -3,20 +3,23 @@
 -->
 <blockquote class="blockquote text-center">
   <div class="carousel">
+    <% let count=0 %>
     <% for (var item in site.data.quotation){%>
-      <input type="radio" class="carousel-radio" name="carousel" id="carousel-<%=site.data.quotation[item]['number'] %>" value="<%=site.data.quotation[item]['number'] %>">
-      <label class="carousel-indicators" for="carousel-<%=site.data.quotation[item]['number'] %>"></label>
-      <div class="carousel-inner">
+      <input type="radio" class="carousel-radio" name="carousel" id="carousel-<%=count %>" value="<%=count %>">
+      <label class="carousel-indicators" for="carousel-<%=count %>"></label>
+      <div class="carousel-inner opacity-animated" style="width: 100%;">
         <div class="blockquote-body">
-          <p><%=site.data.quotation[item]['words'] %></p>
+          <p name="contents-paragraph" ><%=site.data.quotation[item]['words'] %></p>
         </div>
         <footer class="blockquote-footer"><%=site.data.quotation[item]['name'] %></footer>
       </div>
+      <% count++ %>
     <%} %>
   </div>
 </blockquote>
 
 <script>
+  var minHeight=0
 	var tesObj = document.getElementsByName("carousel");
 	//设置 value 值为 0 选中
 	for(var i=0; i < tesObj.length; i++){
@@ -25,4 +28,36 @@
 			break;
 			}
 	}
+  window.addEventListener('resize', ()=>{
+    minHeight = 0;
+    let paragrahs = document.getElementsByName("contents-paragraph");
+    for(let element in paragrahs){
+      element.minHeight = 0;
+    }
+  });
+  async function autoChange() {
+    while (true) {
+      for (var i = 0; i < tesObj.length; i++) {
+        if (tesObj[i].checked) {
+          let paragrahs = document.getElementsByName("contents-paragraph");
+          let currentHeight = paragrahs[i].scrollHeight;
+          if(currentHeight>minHeight){
+            minHeight = currentHeight;
+            for (var j = 0; j < paragrahs.length; j++) {
+              paragrahs[j].style.minHeight = minHeight + "px";
+            }
+          }
+
+
+          tesObj[i].checked = false;
+          var nextIndex = (i + 1) % tesObj.length;
+          tesObj[nextIndex].checked = true;
+
+          await new Promise(resolve => setTimeout(resolve, 4000)); 
+          break;
+        }
+      }
+    }
+  }
+  autoChange();
 </script>
