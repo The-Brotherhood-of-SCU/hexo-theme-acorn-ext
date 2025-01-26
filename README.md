@@ -23,6 +23,7 @@ bugfix:
 major-enhancement:
 1. 支持在导航栏中添加外部链接
 2. quotation的data文件不用硬编码序号
+3. 支持Katex
 
 enhancement:
 1. quotation自动轮播
@@ -36,4 +37,3 @@ enhancement:
 
 TODO:
 1. 修复tocbot无法工作的问题
-2. 增加Katex支持

@@ -48,6 +48,11 @@ slogan:
   pages: 
   posts: 
 
+# Katex
+katex:
+  enable: true
+
+
 # Library
 libs:
   feather: https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js
@@ -56,3 +61,5 @@ libs:
   swiper: 
     css: https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css
     js:  https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js
+  katex:
+    css: https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css
