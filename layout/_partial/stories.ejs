@@ -1,6 +1,8 @@
-<div class="col-3 card rounded">
+<div class="col-3 card rounded" style="display: flex;flex-direction: column">
     <a href="<%= url_for(plugin.link) %>">
-      <img style="height: 20rem;object-fit: cover;" class="card-img lazyload" data-src="<%= url_for(plugin.cover) %>" alt="<% plugin.name %>">
+      <div style="flex-grow: 1">
+        <img style="height: 20rem;object-fit: cover;" class="card-img lazyload" data-src="<%= url_for(plugin.cover) %>" alt="<% plugin.name %>">
+      </div>
     </a>
     <div class="card-body bg-light">
       <h5 class="card-title line-clamp line-clamp-1">
