@@ -50,9 +50,9 @@ slogan:
 
 # Library
 libs:
-  feather: /libs/feather/feather.min.js # V4.29.0
-  lazysizes: /libs/lazysizes/lazysizes.min.js
-  tocbot: /libs/tocbot/tocbot.min.js
+  feather: https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js
+  lazysizes: https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js
+  tocbot: https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.32.2/tocbot.min.js
   swiper: 
-    css: /libs/swiper/swiper-bundle.min.css
-    js:  /libs/swiper/swiper-bundle.min.js
+    css: https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css
+    js:  https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js

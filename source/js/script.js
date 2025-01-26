@@ -10,12 +10,3 @@ document.onscroll = function() {
 }
 
 feather.replace()
-
-var tesObj = document.getElementsByName("carousel");
-	//设置 value 值为 0 选中
-	for(var i=0; i < tesObj.length; i++){
-		if (tesObj[i].value=="0"){
-			tesObj[i].checked = true;
-			break;
-			}
-	}

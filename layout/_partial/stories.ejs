@@ -1,5 +1,4 @@
-<div class="col-3">
-  <div class="card rounded">
+<div class="col-3 card rounded">
     <a href="<%= url_for(plugin.link) %>">
       <img style="height: 20rem;object-fit: cover;" class="card-img lazyload" data-src="<%= url_for(plugin.cover) %>" alt="<% plugin.name %>">
     </a>
@@ -10,5 +9,4 @@
       <hr class="hr">
       <div class="card-text text-gray line-clamp line-clamp-2"><%= plugin.description %></div>
     </div>
-  </div>
 </div>
