@@ -24,6 +24,7 @@ major-enhancement:
 1. 支持在导航栏中添加外部链接
 2. quotation的data文件不用硬编码序号
 3. 支持Katex
+4. 支持非post页面的标题栏背景自定义
 
 enhancement:
 1. quotation自动轮播
