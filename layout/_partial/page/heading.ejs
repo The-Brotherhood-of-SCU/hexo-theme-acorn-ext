@@ -1,9 +1,12 @@
-<div class="page-heading">
+<div class="page-heading<% if (page.cn_title) { %> internal-heading<% } %>">
   <!-- page-type-title -->
   <% if (!is_post()) { %>
     <%- partial('title') %>
   <% } %>
   <!-- page-type-slogan -->
+  <% if (page.cn_title) { %>
+  <h5 class="slogan font-w-lighter text-gray"><%= page.cn_title %></h5>
+  <% } else { %>
   <h5 class="slogan font-w-lighter text-gray">
     <% if (is_archive()) { %>
     <%- theme.slogan.archives %>
@@ -13,4 +16,5 @@
     <%- theme.slogan.posts %>
     <% } %>
   </h5>
+  <% } %>
 </div>

@@ -18,3 +18,83 @@
     opacity: .9
   .container
     z-index: 3
+
+
+// Internal Projects Card
+//
+.internal-card-link
+  text-decoration: none
+  color: inherit
+  display: block
+
+.internal-card
+  display: flex
+  flex-direction: column
+  padding: spacer * 2
+  border: 0.15rem solid gray-200
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%)
+  transition: transition-base
+  &:hover
+    box-shadow: 0 12px 32px rgba(30, 144, 255, 0.12)
+    transform: translateY(-4px)
+    border-color: vis-primary-color
+    .internal-card-icon
+      background: vis-primary-color
+      color: #fff
+    .internal-card-footer
+      color: vis-primary-color
+
+.internal-card-icon
+  width: 5.6rem
+  height: 5.6rem
+  border-radius: 1.2rem
+  background: rgba(30, 144, 255, 0.08)
+  color: vis-primary-color
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-bottom: spacer * 1.5
+  transition: transition-base
+
+.internal-card .card-body
+  padding: 0
+  flex-grow: 1
+
+.internal-card .card-title
+  font-size: $h5-font-size
+  font-weight: 600
+  margin-bottom: spacer * 0.5
+  color: gray-900
+
+.internal-card-en
+  color: gray-500
+  font-size: 1.2rem
+  letter-spacing: 0.04em
+  text-transform: uppercase
+  display: block
+  margin-bottom: spacer
+
+.internal-card .hr
+  margin: spacer 0
+
+.internal-card .card-text
+  font-size: 1.4rem
+  line-height: 1.6
+
+.internal-card-footer
+  display: flex
+  align-items: center
+  gap: 0.5rem
+  margin-top: spacer * 1.5
+  font-size: 1.3rem
+  color: gray-500
+  transition: transition-base
+
+
+// Internal page heading: always stack vertically
+//
+.internal-heading.page-heading
+  @media media-sm
+    flex-direction: column
+    align-items: flex-start
+    justify-content: flex-start
