@@ -6,12 +6,56 @@
     position: relative
     padding-bottom: spacer
     color: primary-color
+    h3
+      font-size: 2.8rem
+      font-weight: 700
+      letter-spacing: -.01em
     &::after
       content: ''
       position: absolute
       center-x()
       bottom: 0
-      width: 5rem
-      height: border-width * 3
-      background-color: secondary-color
-      border-radius: border-width * 3 / 2
+      width: 4rem
+      height: .3rem
+      background: linear-gradient(90deg, primary-color, secondary-color)
+      border-radius: .3rem
+
+// Culture cards
+.culture-card
+  padding: 3.2rem 2rem
+  border-radius: 1.2rem
+  background: white
+  transition: transition-base
+  border: 1px solid rgba(0,0,0,.06)
+  height: 100%
+  &:hover
+    transform: translateY(-6px)
+    box-shadow: 0 16px 40px rgba(0,0,0,.1)
+    border-color: rgba(30,144,255,.2)
+    .culture-icon-wrap
+      background: primary-color
+      img
+        filter: brightness(0) invert(1)
+
+  .culture-icon-wrap
+    width: 7.2rem
+    height: 7.2rem
+    border-radius: 1.6rem
+    background: rgba(30,144,255,.08)
+    display: flex
+    align-items: center
+    justify-content: center
+    margin: 0 auto 2rem
+    transition: transition-base
+
+  .culture-title
+    font-size: 1.8rem
+    font-weight: 600
+    color: dark-color
+    margin-bottom: .8rem
+
+  .culture-desc
+    font-size: 1.4rem
+    color: gray-color
+    line-height: 1.6
+    margin: 0
