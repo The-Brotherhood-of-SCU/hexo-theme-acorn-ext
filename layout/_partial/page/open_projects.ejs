@@ -1,13 +1,10 @@
 <div class="row">
   <% for (var item in site.data.open_projects){%>
-    <div class="col">
-      <div class="card rounded bg-white" style="display: flex;flex-direction: column;height: 100%;">
-        <div style="flex-grow: 1">
-          <a href="<%=url_for(site.data.open_projects[item]['link']) %>" >
-            <img class="card-img lazyload" data-src="<%=url_for(site.data.open_projects[item]['cover']) %>" alt="<%=site.data.open_projects[item]['name'] %>">
-          </a>
-        </div>
-
+    <div class="col-4">
+      <div class="card rounded bg-white h-100">
+        <a href="<%=url_for(site.data.open_projects[item]['link']) %>" style="display:block;height:18rem;overflow:hidden;">
+          <img class="card-img lazyload" data-src="<%=url_for(site.data.open_projects[item]['cover']) %>" alt="<%=site.data.open_projects[item]['name'] %>" style="width:100%;height:100%;object-fit:cover;">
+        </a>
         <div class="card-body px-4">
           <h5 class="card-title line-clamp line-clamp-1">
             <a href="<%=url_for(site.data.open_projects[item]['link']) %>">
