@@ -1,0 +1,8 @@
+<!-- 
+  Data Files: source/_data/brand_logos.yml
+-->
+<div class="instapic text-center">
+  <% for (var item in site.data.brand_logos){%>
+    <img class="brand-img lazyload" data-src="<%=url_for(site.data.brand_logos[item]['cover']) %>" alt="<%=site.data.brand_logos[item]['name'] %>">
+  <%} %>
+</div>
