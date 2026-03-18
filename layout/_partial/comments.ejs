@@ -1,0 +1,45 @@
+<% if (theme.comments && theme.comments.enable && is_post()) { %>
+<div class="comments-container" style="margin-top: 2rem;">
+  <% if (theme.comments.type === 'giscus') { %>
+    <% const g = theme.comments.giscus %>
+    <script src="https://giscus.app/client.js"
+      data-repo="<%= g.repo %>"
+      data-repo-id="<%= g.repo_id %>"
+      data-category="<%= g.category %>"
+      data-category-id="<%= g.category_id %>"
+      data-mapping="<%= g.mapping || 'pathname' %>"
+      data-strict="0"
+      data-reactions-enabled="<%= g.reactions_enabled || '1' %>"
+      data-emit-metadata="<%= g.emit_metadata || '0' %>"
+      data-input-position="<%= g.input_position || 'bottom' %>"
+      data-theme="<%= g.theme || 'preferred_color_scheme' %>"
+      data-lang="<%= g.lang || 'zh-CN' %>"
+      crossorigin="anonymous"
+      async>
+    </script>
+  <% } else if (theme.comments.type === 'disqus') { %>
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = '<%= page.permalink %>';
+        this.page.identifier = '<%= page.path %>';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://<%= theme.comments.disqus.shortname %>.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  <% } else if (theme.comments.type === 'utterances') { %>
+    <% const u = theme.comments.utterances %>
+    <script src="https://utteranc.es/client.js"
+      repo="<%= u.repo %>"
+      issue-term="<%= u.issue_term || 'pathname' %>"
+      theme="<%= u.theme || 'github-light' %>"
+      crossorigin="anonymous"
+      async>
+    </script>
+  <% } %>
+</div>
+<% } %>

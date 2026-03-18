@@ -56,6 +56,32 @@ slogan:
 katex:
   enable: true
 
+# Comments
+## Supported: giscus, disqus, utterances
+comments:
+  enable: true
+  type: giscus
+  ## Giscus: https://giscus.app/
+  giscus:
+    repo: "The-Brotherhood-of-SCU/the-brotherhood-of-scu.github.io"              # e.g. owner/repo
+    repo_id: "R_kgDOK8kmNQ"
+    category: "General"
+    category_id: "DIC_kwDOK8kmNc4C4s-Y"
+    mapping: "pathname"
+    reactions_enabled: "1"
+    emit_metadata: "0"
+    input_position: "bottom"
+    theme: "preferred_color_scheme"
+    lang: "zh-CN"
+  ## Disqus: https://disqus.com/
+  disqus:
+    shortname: ""
+  ## Utterances: https://utteranc.es/
+  utterances:
+    repo: ""              # e.g. owner/repo
+    issue_term: "pathname"
+    theme: "github-light"
+
 
 # Library
 libs:
