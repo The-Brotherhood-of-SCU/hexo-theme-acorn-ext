@@ -109,9 +109,15 @@ toggle-line   = 2px
         color: light-color
 
 .main
+  display: flex
+  flex-direction: column
   transition: transition-base
-  height: 100%
+  min-height: 100%
   -webkit-overflow-scrolling: touch
+  // 粘性页脚：页面内容过短时，中间内容区擑满剩余空间，
+  // 将 footer 铉在视口底部，避免页脚悬在半空
+  > section
+    flex: 1 0 auto
   .mobile-nav-on &
     transform: translateX(mobile-nav-width)
     overflow: hidden

@@ -19,8 +19,9 @@ js-toc-width  = 18rem
 @media media-md
   .js-toc
     display: block
-  .js-toc-content
-    margin-right: js-toc-width + ls-toc-spacer
+  // 目录元素（<ol class="js-toc">）目前在模板中未渲染，
+  // 不再为内容区预留右边距，避免正文右侧出现 200px 死空白。
+  // 若日后启用目录，需恢复：.js-toc-content { margin-right: js-toc-width + ls-toc-spacer }
 
 .toc-list
   list-unstyled()
