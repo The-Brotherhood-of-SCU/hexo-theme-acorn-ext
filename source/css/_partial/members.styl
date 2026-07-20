@@ -12,15 +12,16 @@
 
 .member-card
   background: white
-  border-radius: 1.6rem
-  border: 1px solid rgba(0,0,0,.06)
+  border-radius: card-radius
+  border: border-width solid card-border-color
+  box-shadow: card-shadow-rest
   overflow: hidden
-  transition: transition-base
+  transition: card-transition
   text-align: center
   &:hover
-    transform: translateY(-6px)
-    box-shadow: 0 16px 40px rgba(0,0,0,.1)
-    border-color: rgba(30,144,255,.2)
+    transform: translateY(card-lift)
+    box-shadow: card-shadow-hover
+    border-color: card-border-hover-c
     .member-avatar
       transform: scale(1.05)
     .member-avatar-overlay

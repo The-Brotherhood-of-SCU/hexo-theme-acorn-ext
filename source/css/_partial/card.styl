@@ -1,39 +1,222 @@
 //
 // Card
+// 统一卡片设计语言
+// 静息：白底 + 细边框 + 双层浅阴影
+// 悬浮：上浮 card-lift + 双层深阴影 + 边框染蓝
 //
 .card
   position: relative
+  display: flex
+  flex-direction: column
   overflow: hidden
-  transition: transition-base
-  border-radius: 1rem
+  background: white
+  border: border-width solid card-border-color
+  border-radius: card-radius
+  box-shadow: card-shadow-rest
+  transition: card-transition
   .card-img
     display: block
     max-width: 100%
-    transition(transition-base)
+    transition: transform .5s card-ease
   .card-body,
   .card-header,
   .card-footer
     padding: spacer * 2
   .card-body
+    flex: 1 1 auto
     .archive-article-title + time
       display: inline-block
       margin-bottom: spacer
   .card-text,
   .card-text > p
-    min-height: font-line-height * font-size-base * 2
     margin-bottom: 0
   &:hover
-    box-shadow: 0 12px 32px rgba(0,0,0,.1)
-    transform: translateY(-4px)
+    transform: translateY(card-lift)
+    box-shadow: card-shadow-hover
+    border-color: card-border-hover-c
     .card-img
-      opacity: .85
-      transform: scale(1.03)
+      transform: scale(1.04)
+
+// 卡片顶部品牌强调线（hover 时从左侧展开至全宽）
+.card-accent
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 2
+    height: .3rem
+    width: 0
+    background: brand-gradient
+    border-radius: 0 0 .3rem 0
+    transition: width .45s card-ease
+  &:hover::before
+    width: 100%
+    border-radius: 0
+
+// 卡片内“查看更多/阅读全文”页脚链接，箭头 hover 右移
+.card-link-more
+  display: inline-flex
+  align-items: center
+  gap: .5rem
+  font-size: 1.4rem
+  font-weight: 500
+  color: primary-color
+  text-decoration: none
+  transition: color .3s card-ease
+  .card-link-arrow
+    display: inline-block
+    transition: transform .3s card-ease
+  &:hover
+    color: link-hover-color
+    .card-link-arrow
+      transform: translateX(.4rem)
+
+//
+// Article card（首页博客卡片，纯文本）
+//
+.article-card
+  .card-body
+    padding: 2.2rem 2rem 1.8rem
+  .article-card-meta
+    display: flex
+    align-items: center
+    gap: .9rem
+    margin-bottom: 1.1rem
+    .article-card-author
+      font-size: 1.25rem
+      font-weight: 600
+      color: gray-700
+      letter-spacing: .02em
+    time
+      display: inline-flex
+      align-items: center
+      font-size: 1.25rem
+      font-weight: 500
+      letter-spacing: .05em
+      &::before
+        content: ''
+        width: .6rem
+        height: .6rem
+        border-radius: 50%
+        background: brand-gradient
+        margin-right: .7rem
+        flex-shrink: 0
+  .article-card-title
+    font-size: 1.7rem
+    font-weight: 600
+    line-height: 1.5
+    letter-spacing: -.01em
+    margin-bottom: .8rem
+    a
+      color: gray-900
+      text-decoration: none
+      transition: color .3s card-ease
+      &:hover
+        color: primary-color
+  .article-card-excerpt
+    font-size: 1.4rem
+    line-height: 1.75
+    color: gray-color
+    p
+      margin: 0
+      display: inline
+  .article-card-footer
+    margin-top: auto
+    padding-top: 1.6rem
+
+//
+// Project card（首页开源项目卡片）
+//
+.project-card
+  .project-cover
+    position: relative
+    display: block
+    aspect-ratio: 16 / 10
+    overflow: hidden
+    background: gray-200
+    &::after
+      content: ''
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 0
+      height: 40%
+      background: linear-gradient(180deg, rgba(15, 40, 80, 0) 0%, rgba(15, 40, 80, .18) 100%)
+      opacity: 0
+      transition: opacity .4s card-ease
+    .card-img
+      width: 100%
+      height: 100%
+      object-fit: cover
+  &:hover .project-cover::after
+    opacity: 1
+  .card-body
+    padding: 1.8rem 2rem 1.8rem
+  .project-title
+    font-size: 1.7rem
+    font-weight: 600
+    letter-spacing: -.01em
+    line-height: 1.4
+    margin-bottom: .3rem
+    a
+      color: gray-900
+      text-decoration: none
+      transition: color .3s card-ease
+      &:hover
+        color: primary-color
+  .project-en
+    display: block
+    font-size: 1.15rem
+    font-weight: 600
+    letter-spacing: .08em
+    text-transform: uppercase
+    color: gray-500
+    margin-bottom: 1rem
+  .project-desc
+    font-size: 1.4rem
+    line-height: 1.7
+    color: gray-color
+    margin-bottom: 0
+  .project-footer
+    margin-top: auto
+    padding-top: 1.6rem
+
+//
+// Doc card（首页开源文档卡片）
+//
+.doc-card
+  .doc-cover
+    display: block
+    aspect-ratio: 16 / 10
+    overflow: hidden
+    background: gray-200
+    .card-img
+      width: 100%
+      height: 100%
+      object-fit: cover
+  .card-body
+    padding: 1.8rem 2rem 1.8rem
+  .doc-title
+    font-size: 1.6rem
+    font-weight: 600
+    letter-spacing: -.01em
+    color: gray-900
+    margin-bottom: .6rem
+  .doc-desc
+    font-size: 1.35rem
+    line-height: 1.7
+    color: gray-color
+    margin-bottom: 0
+  .doc-footer
+    margin-top: auto
+    padding-top: 1.8rem
 
 .shadow-hover
-  transition: transition-base
+  transition: card-transition
   &:hover
-    box-shadow: 0 8px 24px rgba(0,0,0,.12)
     transform: translateY(-2px)
+    box-shadow: card-shadow-hover
 
 .rounded-spacer
-  border-radius: 1.2rem
+  border-radius: card-radius

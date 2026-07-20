@@ -1,6 +1,12 @@
 //
 // Article
 //
+// 等高卡片：article 作为网格列与卡片之间的包装层，需传递列被拉伸后的高度，
+// 卡片上的 .h-100 才能擑满；详情页父级为自动高度，此值解析为 auto，无副作用。
+.article,
+.archive-article
+  height: 100%
+
 .article-cover
   position: relative
   border-radius(border-radius-value)
@@ -25,6 +31,37 @@
 
 .article-header
   margin-bottom: 1rem
+
+// 文章元信息（署名 / 日期 / 分类）
+.article-meta
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  margin-top: 1rem
+  font-size: 1.4rem
+  color: gray-500
+  .article-author
+    display: inline-flex
+    align-items: center
+    .article-author-name
+      font-weight: 600
+      color: gray-800
+      letter-spacing: .01em
+  time
+    display: inline-flex
+    align-items: center
+  .article-category
+    display: inline-flex
+    align-items: center
+  // 元信息各项之间的小圆点分隔符
+  > :not(:first-child)::before
+    content: ''
+    display: inline-block
+    width: .35rem
+    height: .35rem
+    border-radius: 50%
+    background: gray-400
+    margin: 0 1.2rem
 
 .article-more-link
   margin-bottom: 0

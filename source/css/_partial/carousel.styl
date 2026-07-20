@@ -16,14 +16,30 @@
     & + .carousel-indicators
       order: 2
       display: inline-block
-      margin: 2rem .5rem 1rem
+      margin: 2.4rem .5rem 1rem
       rounded-circle(spacer)
       background-color: border-color
+      cursor: pointer
+      transition: background-color .3s card-ease, transform .3s card-ease
+      &:hover
+        background-color: gray-400
+        transform: scale(1.25)
       & + .carousel-inner
         order: 1
         flex-grow: 1
         display: none
     &:checked + .carousel-indicators
       background-color: primary-color
+      transform: scale(1.15)
       & + .carousel-inner
         display: block
+        // 切换时淑淡上浮（display none→block 会重启动画）
+        animation: quote-rise .6s card-ease both
+
+@keyframes quote-rise
+  from
+    opacity: 0
+    transform: translateY(1.2rem)
+  to
+    opacity: 1
+    transform: translateY(0)

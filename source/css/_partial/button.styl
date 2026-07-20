@@ -1,10 +1,22 @@
+//
+// Button
+//
 .btn
-  display: inline-block
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  gap: .6rem
   border-width: border-width
+  border-style: solid
   border-color: transparent
-  border-radius: border-radius-value
+  border-radius: .6rem
   padding: spacer spacer * 2
+  font-weight: 500
+  text-decoration: none
   cursor: pointer
+  transition: all .3s card-ease
+  &:hover
+    transform: translateY(-2px)
 
 .btn-sm
   padding: spacer
@@ -15,3 +27,22 @@
 .btn-block
   display: block
   width 100%
+
+// 轮廓主色按钮（hover 填充为实心）
+.btn-outline-primary
+  background: transparent
+  border-width: .15rem
+  border-color: primary-color
+  color: primary-color
+  &:hover
+    background: primary-color
+    border-color: primary-color
+    color: white
+    box-shadow: 0 8px 20px rgba(30, 144, 255, .3)
+
+// 按钮内箭头，hover 右移
+.btn-arrow
+  display: inline-block
+  transition: transform .3s card-ease
+.btn:hover .btn-arrow
+  transform: translateX(.3rem)

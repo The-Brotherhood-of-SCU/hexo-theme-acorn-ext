@@ -1,15 +1,17 @@
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <% if (index && (theme.auto_fold ||post.excerpt)){ %>
-  <div class="card rounded">
+  <div class="card article-card card-accent h-100">
     <%- partial('post/gallery') %>
-    <div class="card-body bg-light">
-			<%- partial('post/title', {class_name: 'article-title mb-0 line-clamp line-clamp-1'}) %>
-			<%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
-			<div class="card-text mt-3 line-clamp line-clamp-2"><%- post.excerpt||post.content %></div>
-      <hr class="hr">
+    <div class="card-body d-flex flex-column">
+      <div class="article-card-meta">
+        <%- partial('post/author', {class_name: 'article-card-author'}) %>
+        <%- partial('post/date', {class_name: 'article-card-date', date_format: null}) %>
+      </div>
+      <%- partial('post/title', {class_name: 'article-card-title line-clamp line-clamp-2'}) %>
+      <div class="article-card-excerpt line-clamp line-clamp-3"><%- post.excerpt||post.content %></div>
       <% if (theme.excerpt_link){ %>
-      <div class="article-more-link">
-        <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+      <div class="article-card-footer">
+        <a class="card-link-more" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %><span class="card-link-arrow">&rarr;</span></a>
       </div>
       <% } %>
     </div>
@@ -26,6 +28,11 @@
       <% if (!is_page()) { %>
       <%- partial('post/title', {class_name: 'article-title'}) %>
       <div class="article-meta">
+        <% if (post.author){ %>
+        <span class="article-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+          <span class="article-author-name" itemprop="name"><%= post.author %></span>
+        </span>
+        <% } %>
         <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
         <%- partial('post/category') %>
       </div>

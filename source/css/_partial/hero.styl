@@ -42,6 +42,7 @@
     margin-bottom: 2rem
     backdrop-filter: blur(4px)
     background: rgba(255,255,255,.08)
+    animation: rise-in .8s card-ease .1s both
 
   .hero-title
     font-size: 5.6rem
@@ -50,6 +51,7 @@
     line-height: 1.1
     margin-bottom: 1.6rem
     text-shadow: 0 2px 20px rgba(0,0,0,.3)
+    animation: rise-in .8s card-ease .22s both
     @media screen and (max-width: 768px)
       font-size: 3.6rem
 
@@ -59,12 +61,14 @@
     margin-bottom: 3.2rem
     font-weight: 300
     letter-spacing: .02em
+    animation: rise-in .8s card-ease .34s both
 
   .hero-actions
     display: flex
     gap: 1.2rem
     justify-content: center
     flex-wrap: wrap
+    animation: rise-in .8s card-ease .46s both
 
   .btn-hero-primary
     display: inline-block
@@ -107,8 +111,12 @@
   min-height: 100%
   object-fit: cover
   transform-origin: center center
-  -webkit-transition: -webkit-transform 1s ease-out
-  transition: transform 1s ease-out, -webkit-transform 1s ease-out
   will-change: transform
-  .hero:hover &
-    transform: translate(-50%, -50%) scale(1.03)
+  // 持续缓慢的 Ken Burns 缩放，让首屏背景始终有呼吸感
+  animation: hero-kenburns 26s ease-in-out infinite alternate
+
+@keyframes hero-kenburns
+  from
+    transform: translate(-50%, -50%) scale(1)
+  to
+    transform: translate(-50%, -50%) scale(1.08)

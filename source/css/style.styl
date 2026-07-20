@@ -29,6 +29,20 @@ body
   margin: 0
   overflow-x: hidden
 
+// 滚动进入动画：JS 会在目标元素进入视口前加上 .reveal 隐藏，
+// 相交后由 WAAPI 接管淑淡上浮，故这里只需隐藏态。
+.reveal
+  opacity: 0
+
+// 入场上浮关键帧（供 hero 等 CSS 动画复用）
+@keyframes rise-in
+  from
+    opacity: 0
+    transform: translateY(2.6rem)
+  to
+    opacity: 1
+    transform: translateY(0)
+
 .feather
   text-align: bottom 
 

@@ -53,8 +53,10 @@ border-bottom-radius(n)
 	border-bottom-left-radius: n
 	border-bottom-right-radius: n
 
-transition(transition)
-	transition: transition
+// 注意：mixin 不能命名为 transition，否则会与 CSS transition 属性冲突，
+// 导致 `transition: xxx .3s ease` 这类多 token 属性值的时长/缓动被 Stylus 错误丢弃
+apply-transition(t)
+	transition: t
 
 sizing(size)
 	width: size

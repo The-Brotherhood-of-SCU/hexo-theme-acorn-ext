@@ -26,35 +26,31 @@
   text-decoration: none
   color: inherit
   display: block
+  height: 100%
 
 .internal-card
-  display: flex
-  flex-direction: column
   padding: spacer * 2
-  border: 0.15rem solid gray-200
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%)
-  transition: transition-base
+  height: 100%
   &:hover
-    box-shadow: 0 12px 32px rgba(30, 144, 255, 0.12)
-    transform: translateY(-4px)
-    border-color: vis-primary-color
     .internal-card-icon
       background: vis-primary-color
       color: #fff
+      box-shadow: 0 8px 20px rgba(30, 144, 255, .32)
+      transform: translateY(-2px)
     .internal-card-footer
       color: vis-primary-color
 
 .internal-card-icon
   width: 5.6rem
   height: 5.6rem
-  border-radius: 1.2rem
+  border-radius: 1.4rem
   background: rgba(30, 144, 255, 0.08)
   color: vis-primary-color
   display: flex
   align-items: center
   justify-content: center
   margin-bottom: spacer * 1.5
-  transition: transition-base
+  transition: card-transition
 
 .internal-card .card-body
   padding: 0
@@ -88,7 +84,7 @@
   margin-top: spacer * 1.5
   font-size: 1.3rem
   color: gray-500
-  transition: transition-base
+  transition: color .3s card-ease
 
 
 // Internal page heading: always stack vertically

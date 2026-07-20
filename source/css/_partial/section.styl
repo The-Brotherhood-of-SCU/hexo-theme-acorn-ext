@@ -4,58 +4,75 @@
 .section
   .section-heading
     position: relative
-    padding-bottom: spacer
-    color: primary-color
+    padding-bottom: spacer * 1.4
     h3
-      font-size: 2.8rem
+      font-size: 3rem
       font-weight: 700
-      letter-spacing: -.01em
+      letter-spacing: -.02em
+      color: gray-900
+    p
+      font-size: 1.5rem
+      letter-spacing: .01em
+      margin-bottom: 0
     &::after
       content: ''
       position: absolute
       center-x()
       bottom: 0
-      width: 4rem
-      height: .3rem
-      background: linear-gradient(90deg, primary-color, secondary-color)
-      border-radius: .3rem
+      width: 4.8rem
+      height: .35rem
+      background: brand-gradient
+      border-radius: .35rem
+    // 进入视口后渐变条从中心展开（无 JS 时保持常显）
+    &.is-revealed::after
+      animation: heading-bar-grow .7s card-ease .3s both
+
+@keyframes heading-bar-grow
+  from
+    transform: translateX(-50%) scaleX(0)
+  to
+    transform: translateX(-50%) scaleX(1)
 
 // Culture cards
 .culture-card
-  padding: 3.2rem 2rem
-  border-radius: 1.2rem
+  padding: 3.4rem 2.4rem
+  border-radius: card-radius
   background: white
-  transition: transition-base
-  border: 1px solid rgba(0,0,0,.06)
+  border: border-width solid card-border-color
+  box-shadow: card-shadow-rest
+  transition: card-transition
   height: 100%
   &:hover
-    transform: translateY(-6px)
-    box-shadow: 0 16px 40px rgba(0,0,0,.1)
-    border-color: rgba(30,144,255,.2)
+    transform: translateY(card-lift)
+    box-shadow: card-shadow-hover
+    border-color: card-border-hover-c
     .culture-icon-wrap
       background: primary-color
+      box-shadow: 0 10px 24px rgba(30, 144, 255, .32)
+      transform: translateY(-2px)
       img
         filter: brightness(0) invert(1)
 
   .culture-icon-wrap
     width: 7.2rem
     height: 7.2rem
-    border-radius: 1.6rem
-    background: rgba(30,144,255,.08)
+    border-radius: 1.8rem
+    background: rgba(30, 144, 255, .08)
     display: flex
     align-items: center
     justify-content: center
-    margin: 0 auto 2rem
-    transition: transition-base
+    margin: 0 auto 2.2rem
+    transition: card-transition
 
   .culture-title
-    font-size: 1.8rem
+    font-size: 1.9rem
     font-weight: 600
-    color: dark-color
+    letter-spacing: -.01em
+    color: gray-900
     margin-bottom: .8rem
 
   .culture-desc
     font-size: 1.4rem
     color: gray-color
-    line-height: 1.6
+    line-height: 1.7
     margin: 0

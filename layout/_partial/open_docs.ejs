@@ -1,12 +1,16 @@
-<div class="row justify-content-center" >
+<div class="row justify-content-center">
   <% for (var item in site.data.open_docs){%>
-    <div class="col-3" >
-      <div class="card bg-white rounded-spacer text-center shadow-hover" style="height: 100%;">
-        <div class="card-body py-5" style="height: 100%;display: flex;flex-direction: column">
-          <h6 class="text-gray"><%=site.data.open_docs[item]['name'] %></h6>
-          <img class="img-fluid lazyload" data-src="<%=site.data.open_docs[item]['cover'] %>" alt="<%=site.data.open_docs[item]['name'] %>" role="img">
-          <p class="mb-5" style="flex-grow: 1"><%=site.data.open_docs[item]['description'] %></p>
-          <a class="btn btn-lg btn-primary text-white" href="<%=site.data.open_docs[item]['link']['url'] %>"><%=site.data.open_docs[item]['link']['text'] %></a>
+    <div class="col-3">
+      <div class="card doc-card card-accent h-100">
+        <div class="doc-cover">
+          <img class="card-img lazyload" data-src="<%=site.data.open_docs[item]['cover'] %>" alt="<%=site.data.open_docs[item]['name'] %>" role="img">
+        </div>
+        <div class="card-body d-flex flex-column text-center">
+          <h5 class="doc-title line-clamp line-clamp-1"><%=site.data.open_docs[item]['name'] %></h5>
+          <p class="doc-desc"><%=site.data.open_docs[item]['description'] %></p>
+          <div class="doc-footer">
+            <a class="btn btn-outline-primary" href="<%=site.data.open_docs[item]['link']['url'] %>"><%=site.data.open_docs[item]['link']['text'] %><span class="btn-arrow">&rarr;</span></a>
+          </div>
         </div>
       </div>
     </div>
