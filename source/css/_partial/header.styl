@@ -5,6 +5,7 @@
   position: relative
   z-index: 9
   margin-bottom: 3rem
+  background: var(--header-bg)
   box-shadow: 0 .5rem 1rem rgba(dark-color, .025)
   transition: transition-base
   .brand
@@ -20,11 +21,12 @@
     width: 100%
   &.header-absolute
     position: absolute
+    background: transparent
     .main-nav .nav-item-link
       color: light-color
   &.header-fixed
     position: fixed
-    background-color: white
+    background-color: var(--header-bg)
 
 //
 // Nav

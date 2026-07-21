@@ -9,7 +9,7 @@
       font-size: 3rem
       font-weight: 700
       letter-spacing: -.02em
-      color: gray-900
+      color: var(--text)
     p
       font-size: 1.5rem
       letter-spacing: .01em
@@ -37,14 +37,14 @@
 .culture-card
   padding: 3.4rem 2.4rem
   border-radius: card-radius
-  background: white
-  border: border-width solid card-border-color
-  box-shadow: card-shadow-rest
+  background: var(--surface)
+  border: border-width solid var(--card-border)
+  box-shadow: var(--card-shadow-rest)
   transition: card-transition
   height: 100%
   &:hover
     transform: translateY(card-lift)
-    box-shadow: card-shadow-hover
+    box-shadow: var(--card-shadow-hover)
     border-color: card-border-hover-c
     .culture-icon-wrap
       background: primary-color
@@ -68,11 +68,11 @@
     font-size: 1.9rem
     font-weight: 600
     letter-spacing: -.01em
-    color: gray-900
+    color: var(--text)
     margin-bottom: .8rem
 
   .culture-desc
     font-size: 1.4rem
-    color: gray-color
+    color: var(--text-3)
     line-height: 1.7
     margin: 0

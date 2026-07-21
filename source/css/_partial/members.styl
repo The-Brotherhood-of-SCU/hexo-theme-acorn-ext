@@ -11,16 +11,16 @@
     grid-template-columns: repeat(4, 1fr)
 
 .member-card
-  background: white
+  background: var(--surface)
   border-radius: card-radius
-  border: border-width solid card-border-color
-  box-shadow: card-shadow-rest
+  border: border-width solid var(--card-border)
+  box-shadow: var(--card-shadow-rest)
   overflow: hidden
   transition: card-transition
   text-align: center
   &:hover
     transform: translateY(card-lift)
-    box-shadow: card-shadow-hover
+    box-shadow: var(--card-shadow-hover)
     border-color: card-border-hover-c
     .member-avatar
       transform: scale(1.05)
@@ -32,7 +32,7 @@
   position: relative
   overflow: hidden
   aspect-ratio: 1
-  background: gray-200
+  background: var(--surface-2)
 
 .member-avatar
   width: 100%
@@ -57,7 +57,7 @@
   font-size: 1.6rem
   font-weight: 600
   margin-bottom: .4rem
-  color: dark-color
+  color: var(--text)
 
 .member-role
   display: inline-block
@@ -73,7 +73,7 @@
 
 .member-bio
   font-size: 1.3rem
-  color: gray-color
+  color: var(--text-3)
   line-height: 1.5
   margin: .8rem 0
   min-height: 0
@@ -81,7 +81,7 @@
 .member-github
   display: inline-block
   font-size: 1.2rem
-  color: gray-color
+  color: var(--text-3)
   text-decoration: none
   transition: transition-base
   &:hover

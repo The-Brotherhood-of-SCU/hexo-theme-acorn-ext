@@ -10,7 +10,7 @@ js-toc-width  = 18rem
   float: right
   top: 0
   width: js-toc-width
-  border-left: border-width border-color solid
+  border-left: border-width var(--border) solid
   font-size: 1.4rem
 
 .js-toc-content
@@ -31,7 +31,7 @@ js-toc-width  = 18rem
     .toc-link
       display: inline-block
       padding: 0.25rem 0
-      color: gray-color
+      color: var(--text-3)
     &.is-active-li
       > .toc-link
           color: primary-color
@@ -41,4 +41,4 @@ js-toc-width  = 18rem
           list-style-type: '-'
           padding-left: 0.5rem
           &::marker
-            color: gray-color
+            color: var(--text-3)

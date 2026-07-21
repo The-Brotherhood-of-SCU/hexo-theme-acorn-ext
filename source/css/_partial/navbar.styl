@@ -16,3 +16,39 @@
       margin-right: 5rem
     .main-nav
       display: block
+
+//
+// 主题切换按钮（日/月图标）
+//
+#theme-toggle
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  width: 3.6rem
+  height: 3.6rem
+  padding: 0
+  border: none
+  border-radius: 50%
+  background: transparent
+  color: var(--nav-link)
+  cursor: pointer
+  transition: background-color .3s card-ease, color .3s card-ease
+  &:hover
+    background: var(--surface-2)
+  // 亮色显示月亮（点击转向深色），深色显示太阳
+  .icon-sun
+    display: none
+  .icon-moon
+    display: block
+
+html[data-theme="dark"] #theme-toggle
+  .icon-sun
+    display: block
+  .icon-moon
+    display: none
+
+// 首页 header-absolute 态（覆盖在 hero 上）图标用浅色
+.header-absolute #theme-toggle
+  color: light-color
+  &:hover
+    background: rgba(255, 255, 255, .15)

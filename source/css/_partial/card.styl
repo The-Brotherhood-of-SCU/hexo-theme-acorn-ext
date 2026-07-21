@@ -9,10 +9,10 @@
   display: flex
   flex-direction: column
   overflow: hidden
-  background: white
-  border: border-width solid card-border-color
+  background: var(--surface)
+  border: border-width solid var(--card-border)
   border-radius: card-radius
-  box-shadow: card-shadow-rest
+  box-shadow: var(--card-shadow-rest)
   transition: card-transition
   .card-img
     display: block
@@ -32,7 +32,7 @@
     margin-bottom: 0
   &:hover
     transform: translateY(card-lift)
-    box-shadow: card-shadow-hover
+    box-shadow: var(--card-shadow-hover)
     border-color: card-border-hover-c
     .card-img
       transform: scale(1.04)
@@ -86,7 +86,7 @@
     .article-card-author
       font-size: 1.25rem
       font-weight: 600
-      color: gray-700
+      color: var(--text-2)
       letter-spacing: .02em
     time
       display: inline-flex
@@ -109,7 +109,7 @@
     letter-spacing: -.01em
     margin-bottom: .8rem
     a
-      color: gray-900
+      color: var(--text)
       text-decoration: none
       transition: color .3s card-ease
       &:hover
@@ -117,7 +117,7 @@
   .article-card-excerpt
     font-size: 1.4rem
     line-height: 1.75
-    color: gray-color
+    color: var(--text-3)
     p
       margin: 0
       display: inline
@@ -134,7 +134,7 @@
     display: block
     aspect-ratio: 16 / 10
     overflow: hidden
-    background: gray-200
+    background: var(--surface-2)
     &::after
       content: ''
       position: absolute
@@ -160,7 +160,7 @@
     line-height: 1.4
     margin-bottom: .3rem
     a
-      color: gray-900
+      color: var(--text)
       text-decoration: none
       transition: color .3s card-ease
       &:hover
@@ -171,12 +171,12 @@
     font-weight: 600
     letter-spacing: .08em
     text-transform: uppercase
-    color: gray-500
+    color: var(--text-3)
     margin-bottom: 1rem
   .project-desc
     font-size: 1.4rem
     line-height: 1.7
-    color: gray-color
+    color: var(--text-3)
     margin-bottom: 0
   .project-footer
     margin-top: auto
@@ -190,7 +190,7 @@
     display: block
     aspect-ratio: 16 / 10
     overflow: hidden
-    background: gray-200
+    background: var(--surface-2)
     .card-img
       width: 100%
       height: 100%
@@ -201,12 +201,12 @@
     font-size: 1.6rem
     font-weight: 600
     letter-spacing: -.01em
-    color: gray-900
+    color: var(--text)
     margin-bottom: .6rem
   .doc-desc
     font-size: 1.35rem
     line-height: 1.7
-    color: gray-color
+    color: var(--text-3)
     margin-bottom: 0
   .doc-footer
     margin-top: auto
@@ -216,7 +216,7 @@
   transition: card-transition
   &:hover
     transform: translateY(-2px)
-    box-shadow: card-shadow-hover
+    box-shadow: var(--card-shadow-hover)
 
 .rounded-spacer
   border-radius: card-radius

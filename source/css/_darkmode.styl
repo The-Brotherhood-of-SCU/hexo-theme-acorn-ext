@@ -1,0 +1,42 @@
+//
+// Dark mode 语义令牌（Design Tokens）
+// :root 为亮色（映射现有调色板），html[data-theme="dark"] 为暗色（蓝灰暗调）。
+// 品牌色（primary/secondary）与图片类资产不进令牌，两种模式保持不变。
+// data-theme 由 head.ejs 的防闪烁脚本在 CSS 加载前写入 <html>。
+//
+:root
+  --bg: #ffffff
+  --bg-soft: #f8f9fa
+  // 卡片等抬升表面
+  --surface: #ffffff
+  // 行内代码 / 封面衬底 / 表格斑马纹
+  --surface-2: #e9ecef
+  --text: #212529
+  --text-2: #495057
+  --text-3: #6c757d
+  --border: #dee2e6
+  --link: #1e90ff
+  --header-bg: #ffffff
+  --nav-link: #212529
+  --code-bg: #eeeeee
+  --card-border: rgba(15, 40, 80, .07)
+  --card-shadow-rest: 0 1px 2px rgba(15, 40, 80, .04), 0 4px 16px rgba(15, 40, 80, .05)
+  --card-shadow-hover: 0 10px 24px rgba(15, 40, 80, .09), 0 22px 48px rgba(15, 40, 80, .13)
+
+html[data-theme="dark"]
+  --bg: #0d1117
+  --bg-soft: #161b22
+  --surface: #1a2230
+  --surface-2: #232d3d
+  --text: #e6edf3
+  --text-2: #b0bac6
+  --text-3: #8b96a5
+  --border: rgba(255, 255, 255, .1)
+  --link: #58a6ff
+  --header-bg: rgba(13, 17, 23, .92)
+  --nav-link: #e6edf3
+  --code-bg: #1f2733
+  --card-border: rgba(255, 255, 255, .08)
+  // dark 下阴影感知弱，以边框勾勒轮廓，阴影仅作辅助
+  --card-shadow-rest: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 16px rgba(0, 0, 0, .35)
+  --card-shadow-hover: 0 10px 24px rgba(0, 0, 0, .45), 0 22px 48px rgba(0, 0, 0, .5)

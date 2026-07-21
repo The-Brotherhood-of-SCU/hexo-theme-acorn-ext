@@ -34,7 +34,7 @@ acronym, abbr
 
 // Links
 a
-  color: link-color
+  color: var(--link)
   text-decoration: none
   &:hover
     color: link-hover-color
@@ -99,5 +99,17 @@ for name in (1 2 3 4 5)
     font-size: 50%
     font-weight: normal
     margin-right: .5rem
+
+// Dark mode：覆盖由 theme 循环生成、带 !important 的颜色工具类。
+// 必须置于样式表靠后位置且同选择器 + !important 才能生效。
+html[data-theme="dark"]
+  .text-gray
+    color: var(--text-3) !important
+  .text-dark
+    color: var(--text) !important
+  .bg-light
+    background-color: var(--surface-2) !important
+  .bg-white
+    background-color: var(--surface) !important
 
 @import "blockquote"

@@ -101,3 +101,40 @@ feather.replace()
   if (document.readyState === 'complete') revealInView();
   else window.addEventListener('load', revealInView);
 })();
+
+//
+// Dark mode 切换
+// data-theme 初始值由 head.ejs 内联脚本设定（防闪烁）；
+// 图标（日/月）显隐由 CSS 根据 html[data-theme] 控制。
+// 这里负责：点击切换 + localStorage 记忆 + 无手动选择时跟随系统变化。
+//
+;(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById('theme-toggle');
+  var media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+  function stored() {
+    try { return localStorage.getItem('theme'); } catch (e) { return null; }
+  }
+  function persist(value) {
+    try { localStorage.setItem('theme', value); } catch (e) {}
+  }
+  function apply(value) {
+    root.setAttribute('data-theme', value);
+  }
+
+  if (btn) {
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      apply(next);
+      persist(next);
+    });
+  }
+
+  // 无手动选择时，实时跟随系统深色偏好变化
+  if (media && !stored()) {
+    var onChange = function (e) { apply(e.matches ? 'dark' : 'light'); };
+    if (media.addEventListener) media.addEventListener('change', onChange);
+    else if (media.addListener) media.addListener(onChange);
+  }
+})();

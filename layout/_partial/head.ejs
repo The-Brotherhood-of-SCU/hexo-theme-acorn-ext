@@ -46,6 +46,21 @@
   <% if (theme.swiper.enable){ %>
     <link rel="stylesheet" href="<%- url_for(theme.libs.swiper.css) %>"/>
   <% } %>
+  <script>
+  // 防闪烁（FOUC）：在 CSS 加载前确定主题。优先 localStorage 记忆，其次跟随系统深色偏好。
+  (function () {
+    var theme = 'light';
+    try {
+      var stored = localStorage.getItem('theme');
+      if (stored === 'dark' || stored === 'light') {
+        theme = stored;
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        theme = 'dark';
+      }
+    } catch (e) {}
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+  </script>
   <%- css('css/style') %>
   <% if(theme.katex.enable){ %>
     <link rel="stylesheet" href="<%- url_for(theme.libs.katex.css) %>"/>

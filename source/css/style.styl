@@ -1,6 +1,7 @@
 @import "https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css"
 
 @import "_variables"
+@import "_darkmode"
 @import "_mixins"
 @import "_normalize"
 
@@ -23,11 +24,13 @@ body
   font-family: font-family-base
   font-size: font-size-base
   line-height: font-line-height
-  background-color: body-background-color
-  color: body-text-color
+  background-color: var(--bg)
+  color: var(--text)
   padding: 0
   margin: 0
   overflow-x: hidden
+  // 主题切换时背景/文字平滑过渡
+  transition: background-color .3s card-ease, color .3s card-ease
 
 // 滚动进入动画：JS 会在目标元素进入视口前加上 .reveal 隐藏，
 // 相交后由 WAAPI 接管淑淡上浮，故这里只需隐藏态。
